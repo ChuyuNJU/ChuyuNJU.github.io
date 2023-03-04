@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html---
 
-### Biography
+### Biography 
 
 Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. He joined the Computer Science and Technology Department of Nanjing University in the same year. His research interests are in the areas of **wireless networking**, including RFID, Mobile Computing, and Smart Sensing.
 
@@ -23,7 +23,7 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 - [November 2020] Our new paper was accepted by <font color="red">IEEE TMC</font>!
 - [April 2020] Our new paper was accepted by IEEE IWQoS 2020!
 
-### Selected News 
+### Selected Publications    [(Full publications)](https://chuyunju.github.io/publications/)
 
 - [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Lei Xie, Yuancan Lin, Wei Wang, Yingying Chen, Yanling Bu, Kai Zhang, and Sanglu Lu. Thru-the-wall Eavesdropping on Loudspeakers via RFID by Capturing Sub-mm Level Vibration. In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies (IMWUT). (UbiComp 2022)
 - [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**,  Lei Xie, Jiaying Wu, Keyan Zhang, Wei Wang, Yanling Bu, and Sanglu Lu. Spin-Antenna: Enhanced 3D Motion Tracking via Spinning Antenna based on COTS RFID. IEEE Transactions on Mobile Computing, 2023. DOI: 10.1109/TMC.2023.3236360
