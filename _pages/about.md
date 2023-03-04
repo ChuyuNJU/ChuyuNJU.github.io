@@ -5,8 +5,7 @@ excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
-  - /about.html
----
+  - /about.html---
 
 ### Biography
 
@@ -14,25 +13,25 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 
 ### Recent News
 
-- [November 2022] Two new papers were accepted by <font color="red">**IEEE INFOCOM 2023**</font>!
-- [November 2022] Two new papers were accepted by <font color="red">**IEEE TMC**</font>!
-- [November 2021] Two new papers were accepted by <font color="red">**IEEE INFOCOM 2022**</font>!
-- [November 2021] Two new papers were accepted by <font color="red">**ACM TOSN**</font>!
-- [October 2021] Two new papers were accepted by <font color="red">**ACM IMWUT**</font>!
-- [July 2021] Our new paper was accepted by <font color="red">**IEEE TMC**</font>!
-- [May 2021] Our new paper was accepted by <font color="red">**ACM IMWUT (ACM Ubicomp 2021)**</font>!
-- [November 2020] Our new paper was accepted by <font color="red">**IEEE TMC**</font>!
+- [November 2022] Two new papers were accepted by <font color="red">IEEE INFOCOM 2023</font>!
+- [November 2022] Two new papers were accepted by <font color="red">IEEE TMC</font>!
+- [November 2021] Two new papers were accepted by <font color="red">IEEE INFOCOM 2022</font>!
+- [November 2021] Two new papers were accepted by <font color="red">ACM TOSN</font>!
+- [October 2021] Two new papers were accepted by <font color="red">ACM IMWUT</font>!
+- [July 2021] Our new paper was accepted by <font color="red">IEEE TMC</font>!
+- [May 2021] Our new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2021)</font>!
+- [November 2020] Our new paper was accepted by <font color="red">IEEE TMC</font>!
 - [April 2020] Our new paper was accepted by IEEE IWQoS 2020!
 
 ### Selected News 
 
-- [<font color="red">**ACM UBICOMP**</font>] **Chuyu Wang**, Lei Xie, Yuancan Lin, Wei Wang, Yingying Chen, Yanling Bu, Kai Zhang, and Sanglu Lu. Thru-the-wall Eavesdropping on Loudspeakers via RFID by Capturing Sub-mm Level Vibration. In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies (IMWUT). (UbiComp 2022)
-- [<font color="red">**ACM UBICOMP**</font>] **Chuyu Wang**,  Lei Xie, Jiaying Wu, Keyan Zhang, Wei Wang, Yanling Bu, and Sanglu Lu. Spin-Antenna: Enhanced 3D Motion Tracking via Spinning Antenna based on COTS RFID. IEEE Transactions on Mobile Computing, 2023. DOI: 10.1109/TMC.2023.3236360
-- [<font color="red">**JOS**</font>] **Chuyu Wang**, Lei Xie, Yanchao Zhao, Daqing Zhang, Baoliu Ye, Sanglu Lu. A survey on RFID-based battery-less sensing. Journal of Software,2022, 33(1): 297-323.
-- [<font color="red">**IEEE TMC**</font>] **Chuyu Wang**, Lei Xie, Wei Wang, Yingying Chen, Tao Xue, and Sanglu Lu. Probing into the Physical Layer: Moving Tag Detection for Large-Scale RFID Systems. IEEE Transactions on Mobile Computing, vol. 19, no. 5, pp. 1200 - 1215,2020. DOI: 10.1109/TMC.2019.2907244 
-- [<font color="red">**ACM UBICOMP**</font>] **Chuyu Wang**, Lei Xie, Wei Wang, Yingying Chen, Yanling Bu, Sanglu Lu, RF-ECG: Heart Rate Variability Assessment based on COTS RFID Tag Array, In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies, Vol. 2, No. 6, Article 85, 2018.
-- [<font color="red">**ACM UBICOMP**</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Lei Xie, Hongbo Liu, Sanglu Lu, RF-Kinect: A Wearable RFID-based Approach Towards 3D Body Movement Tracking, In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies, Vol. 2, No. 1, Article 41,2018. 
-- [<font color="red">**IEEE INFOCOM**</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Hongbo Liu, Lei Xie, Wei Wang, Bingbing He, and Sanglu Lu. Multi-Touch in the Air: Device-Free Finger Tracking and Gesture Recognition via COTS RFID. In Proceeding of IEEE International Conference INFOCOM 2018.
+- [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Lei Xie, Yuancan Lin, Wei Wang, Yingying Chen, Yanling Bu, Kai Zhang, and Sanglu Lu. Thru-the-wall Eavesdropping on Loudspeakers via RFID by Capturing Sub-mm Level Vibration. In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies (IMWUT). (UbiComp 2022)
+- [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**,  Lei Xie, Jiaying Wu, Keyan Zhang, Wei Wang, Yanling Bu, and Sanglu Lu. Spin-Antenna: Enhanced 3D Motion Tracking via Spinning Antenna based on COTS RFID. IEEE Transactions on Mobile Computing, 2023. DOI: 10.1109/TMC.2023.3236360
+- [<font color="red">JOS</font>] **Chuyu Wang**, Lei Xie, Yanchao Zhao, Daqing Zhang, Baoliu Ye, Sanglu Lu. A survey on RFID-based battery-less sensing. Journal of Software,2022, 33(1): 297-323.
+- [<font color="red">IEEE TMC</font>] **Chuyu Wang**, Lei Xie, Wei Wang, Yingying Chen, Tao Xue, and Sanglu Lu. Probing into the Physical Layer: Moving Tag Detection for Large-Scale RFID Systems. IEEE Transactions on Mobile Computing, vol. 19, no. 5, pp. 1200 - 1215,2020. DOI: 10.1109/TMC.2019.2907244 
+- [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Lei Xie, Wei Wang, Yingying Chen, Yanling Bu, Sanglu Lu, RF-ECG: Heart Rate Variability Assessment based on COTS RFID Tag Array, In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies, Vol. 2, No. 6, Article 85, 2018.
+- [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Lei Xie, Hongbo Liu, Sanglu Lu, RF-Kinect: A Wearable RFID-based Approach Towards 3D Body Movement Tracking, In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies, Vol. 2, No. 1, Article 41,2018. 
+- [<font color="red">IEEE INFOCOM</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Hongbo Liu, Lei Xie, Wei Wang, Bingbing He, and Sanglu Lu. Multi-Touch in the Air: Device-Free Finger Tracking and Gesture Recognition via COTS RFID. In Proceeding of IEEE International Conference INFOCOM 2018.
 
 ### Selected Awards 
 
