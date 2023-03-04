@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Dr. Chuyu Wang"
+title                    : "Chuyu Wang"
 title_separator          : "-"
-name                     : &name "Dr. Chuyu Wang"
+name                     : &name "Chuyu Wang"
 description              : &description "Short Bio"
 url                      : https://ChuyuNJU.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Chuyu Wnag"
   avatar           : "IDwang.jpg"
-  bio              : "PhD, Assistant Professor \n "
-  location         : "Nanjing, China"
+  bio              : "PhD, Assistant Professor <br /> Computer Science <br /> Nanjing University"
+  location         : "Room 619, CS building <br /> Nanjing University <br /> Nanjing , China"
   employer         :
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=yb3PUaoAAAAJ"
