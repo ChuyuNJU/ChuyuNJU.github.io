@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Dr. Chuyu Wang"
 title_separator          : "-"
 name                     : &name "Dr. Chuyu Wang"
-description              : &description "Dr. Chuyu Wang"
+description              : &description "Short Bio"
 url                      : https://ChuyuNJU.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ChuyuNJU/ChuyuNJU.github.io"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Chuyu Wnag"
   avatar           : "IDwang.jpg"
-  bio              : "Assistang Professor"
-  location         : "Nanjing, China"
+  bio              : "PhD, Assistang Professor \n "
+  location         : "Room 619, CS building, No.163 Xianlin Avenue, Nanjing, China"
   employer         :
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=yb3PUaoAAAAJ"
