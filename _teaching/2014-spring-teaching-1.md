@@ -1,7 +1,7 @@
 ---
-title: "Teaching experience 1"
+title: "Data Structure (With [Wujun Li](https://cs.nju.edu.cn/lwj/index.htm))"
 collection: teaching
-type: "Undergraduate course"
+type: "Data Structure"
 permalink: /teaching/2014-spring-teaching-1
 venue: "University 1, Department"
 date: 2014-01-01
