@@ -27,12 +27,6 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 
 ### Selected Publications    [(Full publications)](https://chuyunju.github.io/publications/)
 
-
-<img align="left" width="200" src="/images/IDwang.jpg" />
-
-Some text to test the function
-
-
 - [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Lei Xie, Yuancan Lin, Wei Wang, Yingying Chen, Yanling Bu, Kai Zhang, and Sanglu Lu. Thru-the-wall Eavesdropping on Loudspeakers via RFID by Capturing Sub-mm Level Vibration. In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies (IMWUT). (UbiComp 2022)
 - [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**,  Lei Xie, Jiaying Wu, Keyan Zhang, Wei Wang, Yanling Bu, and Sanglu Lu. Spin-Antenna: Enhanced 3D Motion Tracking via Spinning Antenna based on COTS RFID. IEEE Transactions on Mobile Computing, 2023. DOI: 10.1109/TMC.2023.3236360
 - [<font color="red">JOS</font>] **Chuyu Wang**, Lei Xie, Yanchao Zhao, Daqing Zhang, Baoliu Ye, Sanglu Lu. A survey on RFID-based battery-less sensing. Journal of Software,2022, 33(1): 297-323.
