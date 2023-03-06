@@ -28,7 +28,7 @@ author_profile: true,
 
 ### 2021
 ---
-- [<font color="red">CCCF</font>] Lei Xie, **Chuyu Wang**, Yanling Bu, Jingyi Ning, and Sanglu Lu. From “Identification” to “Perception”: “Tagged” Batteryless Sensing Based on RFID. Communications of the CCF. Vol. 17, no. 2, pp. 19-27, 2021.
+- [<font color="red">CCCF</font>] Lei Xie, **Chuyu Wang**, Yanling Bu, Jingyi Ning, and Sanglu Lu. From “Identification” to “Perception”: “Tagged” Batteryless Sensing Based on RFID. Communications of the CCF. Vol. 17, no. 2, pp. 19-27, 2021.<br />
 （谢磊，王楚豫，卜艳玲，宁静仪，陆桑璐. 从“识别”到“感知”：基于RFID 的可标记无源感知. 中国计算机学会通讯. 第17卷，第2期, 2021.）<br /> [[PDF]](https://cs.nju.edu.cn/chuyu/publications/CCCF2021RFID.pdf)
 - [<font color="red">ACM UBICOMP</font>]  Yuancan Lin, Lei Xie$^*$, **Chuyu Wang**, Yanling Bu, and Sanglu Lu. [DropMonitor: Millimeter-level Sensing for RFID-based Infusion Drip Rate Monitoring.](https://dl.acm.org/doi/abs/10.1145/3463496) In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies (IMWUT), June 2021, Article No.: 72, pp 1–22, 2021. (UbiComp 2021). https://doi.org/10.1145/3463496<br />[[PDF]](https://cs.nju.edu.cn/chuyu/publications/ubicomp2021lin.pdf) [[bibtex]](https://cs.nju.edu.cn/chuyu/bib/ubicomp2021lin.txt)
 - [<font color="red">IEEE TMC</font>]  Jingyi Ning, Lei Xie$^*$, **Chuyu Wang**, Yanling Bu, Fengyuan Xu, Da-wei Zhou, Sanglu Lu, and Baoliu Ye. [RF-Badge: Vital Sign-based Authentication via RFID Tag Array on Badges.](https://ieeexplore.ieee.org/document/9490377) IEEE Transactions on Mobile Computing, vol. 22, no. 2, pp. 1170-1184, 1 Feb. 2023, doi: 10.1109/TMC.2021.3097912.<br />[[bibtex]](https://cs.nju.edu.cn/chuyu/bib/TMC2021ning.txt)
