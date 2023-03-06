@@ -6,9 +6,6 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
-
 # Site Settings
 locale                   : "en-US"
 title                    : "Chuyu Wang"
