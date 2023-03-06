@@ -1,5 +1,6 @@
 ---
 permalink: /
+layout: archive
 title: "Chuyu Wang 王楚豫"
 excerpt: "About me"
 author_profile: true
