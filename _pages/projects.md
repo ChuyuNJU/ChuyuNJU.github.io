@@ -1,12 +1,10 @@
 ---
 layout: archive
-title: "Projects"
+title: "主持在研项目信息"
 permalink: /projects/
 author_profile: true,
 ---
 
-
-### 主持在研项目信息
 ---
 - 软件定义的感算控一体化可编程平台架构及融合方法----科技部重点研发计划-子课题（主持）
 - 基于多标签协同的RFID跨域感知方法研究-----国家自然科学基金-青年项目（主持）
