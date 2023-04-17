@@ -37,6 +37,9 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 
 ### Selected Awards 
 
+* [2022] ACM Nanjing Chapter Rising Star
+* [2020] Jiangsu Outstanding Ph.D. Thesis Award
+* [2020] Nanjing University Outstanding Ph.D. Thesis Award
 * [2019] ACM China Doctorial Dissertation Award Nomination 2020
 * [2019] ACM Nanjing Chapter Doctorial Dissertation Award 2020
 * [2018] Best-in-Session Presentation Award in IEEE INFOCOM 2018
