@@ -10,10 +10,10 @@ author_profile: true,
   - National Key R&D Program of China under Grant No. 2022YFB3303900
 
 -  基于多信道融合增强的RFID跨域感知研究----**国家自然科学基金-面上项目**（主持，**在研**）
-  - National Natural Science Foundation of China under Grant No. 62372224
+	- National Natural Science Foundation of China under Grant No. 62372224
 
 - 基于多标签协同的RFID跨域感知方法研究-----**国家自然科学基金-青年项目**（主持，结题）
-  - National Natural Science Foundation of China under Grant No. 61902175 
+	- National Natural Science Foundation of China under Grant No. 61902175 
 
 - 基于RFID干扰量化的跨域感知技术研究-----江苏省自然科学基金-青年科学基金项目（主持，结题）
   - JiangSu Natural Science Foundation under Grant No. BK20190293
