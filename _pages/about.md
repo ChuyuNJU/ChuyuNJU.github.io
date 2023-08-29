@@ -26,8 +26,10 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 - [October 2021] Two new papers were accepted by <font color="red">ACM IMWUT</font>!
 - [July 2021] Our new paper was accepted by <font color="red">IEEE TMC</font>!
 - [May 2021] Our new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2021)</font>!
-- [November 2020] Our new paper was accepted by <font color="red">IEEE TMC</font>!
-- [April 2020] Our new paper was accepted by IEEE IWQoS 2020!
+<!-- - [November 2020] Our new paper was accepted by <font color="red">IEEE TMC</font>!-->
+<!-- - [April 2020] Our new paper was accepted by IEEE IWQoS 2020! -->
+
+
 
 ### Selected Publications    [(Full publications)](https://chuyunju.github.io/publications/)
 
