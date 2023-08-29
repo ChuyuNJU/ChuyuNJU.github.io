@@ -16,6 +16,7 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 ### Recent News
 
 - [August 2023] Our research was funded by National Natural Science Foundation of China ---- General Program. （<font color="red">**国家自然科学基金-面上项目**</font>）
+- [July 2023] I was awarded  <font color="red">ACM Nanjing Chapter Rising Star 2022</font>! 
 - [June 2023] One new paper was accepted by <font color="red">IEEE SECON</font>!
 - [November 2022] Two new papers were accepted by <font color="red">IEEE INFOCOM 2023</font>!
 - [November 2022] Two new papers were accepted by <font color="red">IEEE TMC</font>!
