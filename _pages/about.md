@@ -39,7 +39,7 @@ Chuyu Wang received his Ph.D. degree from the [DIStributed computing LABoratory 
 - [<font color="red">IEEE TMC</font>] **Chuyu Wang**, Lei Xie, Wei Wang, Yingying Chen, Tao Xue, and Sanglu Lu. Probing into the Physical Layer: Moving Tag Detection for Large-Scale RFID Systems. IEEE Transactions on Mobile Computing, vol. 19, no. 5, pp. 1200 - 1215,2020. DOI: 10.1109/TMC.2019.2907244 
 - [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Lei Xie, Wei Wang, Yingying Chen, Yanling Bu, Sanglu Lu, RF-ECG: Heart Rate Variability Assessment based on COTS RFID Tag Array, In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies, Vol. 2, No. 6, Article 85, 2018.
 - [<font color="red">ACM UBICOMP</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Lei Xie, Hongbo Liu, Sanglu Lu, RF-Kinect: A Wearable RFID-based Approach Towards 3D Body Movement Tracking, In Proceedings of the ACM on Interactive, Mobile,Wearable and Ubiquitous Technologies, Vol. 2, No. 1, Article 41,2018. 
-- [<font color="red">IEEE INFOCOM</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Hongbo Liu, Lei Xie, Wei Wang, Bingbing He, and Sanglu Lu. Multi-Touch in the Air: Device-Free Finger Tracking and Gesture Recognition via COTS RFID. In Proceeding of IEEE International Conference INFOCOM 2018.
+- [<font color="red">IEEE INFOCOM</font>] **Chuyu Wang**, Jian Liu, Yingying Chen, Hongbo Liu, Lei Xie, Wei Wang, Bingbing He, and Sanglu Lu. Multi-Touch in the Air: Device-Free Finger Tracking and Gesture Recognition via COTS RFID. In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2018.
 
 ### Selected Awards 
 
