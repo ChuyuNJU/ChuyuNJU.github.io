@@ -12,6 +12,5 @@ author_profile: true,
 - 2021 Autumn, Data Structure, with [Lin Shang](https://cs.nju.edu.cn/shanglin/index.htm)
 - 2022 Autumn, Data Structure, with [Wujun Li](https://cs.nju.edu.cn/lwj/index.htm), [Lin Shang](https://cs.nju.edu.cn/shanglin/index.htm), [Jia Liu](https://cs.nju.edu.cn/liujia/index.htm)
 - 2023 Spring, Data Structure, with [Lin Shang](https://cs.nju.edu.cn/shanglin/index.htm)
-
-
+- 2023 Autumn, Data Structure, with [Wujun Li](https://cs.nju.edu.cn/lwj/index.htm), [Lei Xu](https://cs.nju.edu.cn/xulei/index.htm), [Jia Liu](https://cs.nju.edu.cn/liujia/index.htm)
 
