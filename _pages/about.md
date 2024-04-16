@@ -17,6 +17,9 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 
 ### Recent News
 
+- [April 2024] One new paper was accepted by <font color="red">IEEE ICDCS</font>!
+- [March 2024] One new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2024)</font>!
+- [March 2024] I was promoted to a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) !
 - [August 2023] Our research was funded by National Natural Science Foundation of China ---- General Program. （<font color="red"><b>国家自然科学基金-面上项目</b></font>）
 - [July 2023] I was awarded  <font color="red">ACM Nanjing Chapter Rising Star 2022</font>! 
 - [June 2023] One new paper was accepted by <font color="red">IEEE SECON</font>!
