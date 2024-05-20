@@ -5,15 +5,23 @@ permalink: /publications/
 author_profile: true,
 ---
 
+### 2024
 
-### 2023
 ---
 
-- [<font color="red">IEEE INFOCOM</font>] Yiwen Feng, Kai Zhang, **Chuyu Wang\***, Lei Xie, Jingyi Ning, and Shijia Chen. [mmEavesdropper: Signal Augmentation-based Directional Eavesdropping with mmWave Radar.](https://chuyunju.github.io/publications/) In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2023. 
-- [<font color="red">IEEE INFOCOM</font>] Long Fan, Lei Xie\*, Xinran Lu, Yi Li, **Chuyu Wang**, and Sanglu Lu. [mmMIC: Multi-modal Speech Recognition based on mmWave Radar.](https://chuyunju.github.io/publications/) In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2023.
+- [<font color="red">IEEE JSAC</font>] Jingyi Ning, Lei Xie, Yi Li, Yingying Chen, Yanling Bu, **Chuyu Wang**, Sanglu Lu and Baoliu Ye. [MoiréTracker: Continuous Camera-to-Screen 6-DoF Pose Tracking based on Moiré Pattern.](https://chuyunju.github.io/publications/) Accepted by IEEE Journal on Selected Areas in Communications (JSAC), 2024. 
+- [<font color="red">ACM Ubicomp</font>] Long Fan, Lei Xie, Wenhui Zhou, **Chuyu Wang**, Yanling Bu and Sanglu Lu.. [Beamforming for Sensing: Hybrid Beamforming based on Transmitter-Receiver Collaboration for Millimeter-Wave Sensing.](https://chuyunju.github.io/publications/) Accepted to appear In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT),  (UbiComp 2024). 
+- [<font color="red">IEEE ICDCS</font>] Shiyuan Ma, Lei Xie, **Chuyu Wang**, Long Fan, Jingyi Ning, Qing Guo, Baoliu Ye and Sanglu Lu. [LED Can Backscatter: Multi-Modal based 3D Localization via LED-tag.](https://chuyunju.github.io/publications/) Accepted to appear In Proceeding of IEEE International Conference on Distributed Computing Systems, (ICDCS 2024).
+
+### 2023
+
+---
+
+- [<font color="red">IEEE INFOCOM</font>] Yiwen Feng, Kai Zhang, **Chuyu Wang\***, Lei Xie, Jingyi Ning, and Shijia Chen. [mmEavesdropper: Signal Augmentation-based Directional Eavesdropping with mmWave Radar.](https://ieeexplore.ieee.org/document/10229095/) In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2023. 
+- [<font color="red">IEEE INFOCOM</font>] Long Fan, Lei Xie\*, Xinran Lu, Yi Li, **Chuyu Wang**, and Sanglu Lu. [mmMIC: Multi-modal Speech Recognition based on mmWave Radar.](https://ieeexplore.ieee.org/document/10229085) In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2023.
 - [<font color="red">IEEE TMC</font>] Lei Xie\*, Zihao Chu, Yi Li, Tao Gu, Yanling Bu, **Chuyu Wang\***, Sanglu Lu. [Industrial Vision: Rectifying Millimeter-Level Edge Deviation in Industrial Internet of Things with Camera-based Edge Device.](https://ieeexplore.ieee.org/abstract/document/10048486) Accepted to Appear in IEEE Transactions on Mobile Computing, 2023. DOI: 10.1109/TMC.2023.3246176<br /> [[PDF]](https://cs.nju.edu.cn/chuyu/publications/xie2023industrial.pdf) [[bibtex]](https://cs.nju.edu.cn/chuyu/bib/xie2023industrial.txt)
 - [<font color="red">IEEE TMC</font>] **Chuyu Wang**,  Lei Xie\*, Jiaying Wu, Keyan Zhang, Wei Wang, Yanling Bu, and Sanglu Lu. [Spin-Antenna: Enhanced 3D Motion Tracking via Spinning Antenna based on COTS RFID.](https://ieeexplore.ieee.org/document/10015764) IEEE Transactions on Mobile Computing, 2023. DOI: 10.1109/TMC.2023.3236360<br /> [[PDF]](https://cs.nju.edu.cn/chuyu/publications/wang2023spin.pdf) [[bibtex]](https://cs.nju.edu.cn/chuyu/bib/wang2023spin.txt)
-- [<font color="red">IEEE SECON</font>] Qing Guo, Gaolei Duan, Lei Xie, Jingyi Ning, **Chuyu Wang**, Baoliu Ye and Sanglu Lu. [PalmEcho: Multimodal Authentication for Smartwatch via Beating Gestures.](https://chuyunju.github.io/publications/) In Proceeding of 20th Annual IEEE International Conference on Sensing, Communication, and Networking (IEEE SECON 2023).
+- [<font color="red">IEEE SECON</font>] Qing Guo, Gaolei Duan, Lei Xie, Jingyi Ning, **Chuyu Wang**, Baoliu Ye and Sanglu Lu. [PalmEcho: Multimodal Authentication for Smartwatch via Beating Gestures.](https://ieeexplore.ieee.org/document/10287520) In Proceeding of 20th Annual IEEE International Conference on Sensing, Communication, and Networking (IEEE SECON 2023).
 
 ### 2022
 ---

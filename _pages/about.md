@@ -17,6 +17,7 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 
 ### Recent News
 
+- [May 2024] One new paper was accepted by <font color="red">IEEE JSAC</font>!
 - [April 2024] One new paper was accepted by <font color="red">IEEE ICDCS</font>!
 - [March 2024] One new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2024)</font>!
 - [March 2024] I was promoted to a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) !
@@ -51,6 +52,7 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 * [2022] ACM Nanjing Chapter Rising Star
 * [2020] Jiangsu Outstanding Ph.D. Thesis Award
 * [2020] Nanjing University Outstanding Ph.D. Thesis Award
+* [2020] IEEE MSRLA Best workshop paper award
 * [2019] ACM China Doctorial Dissertation Award Nomination 2020
 * [2019] ACM Nanjing Chapter Doctorial Dissertation Award 2020
 * [2018] Best-in-Session Presentation Award in IEEE INFOCOM 2018
