@@ -30,10 +30,10 @@ author_profile: true,
   
   - JiangSu Natural Science Foundation under Grant No. BK20190293
   
-- 面向电力工业互联网的边缘计算基础软件研发及应用-----江苏省重点研发计划子课题（主持，**在研**）
+- 面向电力工业互联网的边缘计算基础软件研发及应用-----江苏省重点研发计划子课题（主持，结题）
   - Key R&D Program of Jiangsu Province under Grant No. BE2020001-3
 
-- 自主协同的多模态感知及融合机制研究-----国家自然科学基金-重点项目（参与，**在研**）
+- 自主协同的多模态感知及融合机制研究-----国家自然科学基金-重点项目（参与，结题，优秀）
   - National Natural Science Foundation of China under Grant No. 61832008
 
 - 基于RFID标签阵列的可标记无源感知技术研究-----国家自然科学基金-面上项目（参与，结题）
