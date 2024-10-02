@@ -11,12 +11,16 @@ redirect_from:
 
 ### Biography 
 
-I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) and PhD Supervisor (博士生导师) in [Department of Computer Science and Technology Department](http://cs.nju.edu.cn/) at [Nanjing University](http://www.nju.edu.cn/). I  received his Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. He joined the Computer Science and Technology Department of Nanjing University in the same year. His research interests are in the areas of **wireless sensing**, including RFID, Mobile Computing, and Smart Sensing.
+I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) and PhD Advisor (博士生导师) in [Department of Computer Science and Technology Department](http://cs.nju.edu.cn/) at [Nanjing University](http://www.nju.edu.cn/). I  received his Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. He joined the Computer Science and Technology Department of Nanjing University in the same year. His research interests are in the areas of **wireless sensing**, including RFID, Mobile Computing, and Smart Sensing.
 
 <font color="red">I am recruiting motivated Ph.D. or master students who would like to work on the wireless sensing, pervasive computing and related areas. Undergraduate students who are interested in the related topics are also encouraged to contact me. </font>
 
 ### Recent News
 
+- [September 2024] One new paper was accepted by <font color="red">ACM TCH</font>!
+- [Augest 2024] One new paper was accepted by <font color="red">ACM Mobicom 2024</font>!
+- [August 2024] Our research was funded by Natural Science Foundation of Jiangsu Province ---- Key Program. （<font color="red"><b>江苏省基础研究计划重点项目</b></font>）
+- [May 2024] Our team received the Top Ten Scientific and Technological Advances in the Industry Sector in Jiangsu Province (<font color="red">江苏省行业领域十大科技进展</font>)！
 - [May 2024] One new paper was accepted by <font color="red">IEEE JSAC</font>!
 - [April 2024] One new paper was accepted by <font color="red">IEEE ICDCS</font>!
 - [March 2024] One new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2024)</font>!
@@ -27,11 +31,11 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 - [November 2022] Two new papers were accepted by <font color="red">IEEE INFOCOM 2023</font>!
 - [November 2022] Two new papers were accepted by <font color="red">IEEE TMC</font>!
 - [November 2022] Our research was funded by National Key R&D Program of China ---- Industrial Software Special sub-topics. （<font color="red"><b>科技部重点研发计划-子课题</b></font>）
-- [November 2021] Two new papers were accepted by <font color="red">IEEE INFOCOM 2022</font>!
+<!--- [November 2021] Two new papers were accepted by <font color="red">IEEE INFOCOM 2022</font>!
 - [November 2021] Two new papers were accepted by <font color="red">ACM TOSN</font>!
 - [October 2021] Two new papers were accepted by <font color="red">ACM IMWUT</font>!
 - [July 2021] Our new paper was accepted by <font color="red">IEEE TMC</font>!
-- [May 2021] Our new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2021)</font>!
+- [May 2021] Our new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2021)</font>! -->
 <!-- - [November 2020] Our new paper was accepted by <font color="red">IEEE TMC</font>!-->
 <!-- - [April 2020] Our new paper was accepted by IEEE IWQoS 2020! -->
 
@@ -49,6 +53,7 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 
 ### Selected Awards 
 
+* [2024] 江苏省行业领域十大科技进展
 * [2022] ACM Nanjing Chapter Rising Star
 * [2020] Jiangsu Outstanding Ph.D. Thesis Award
 * [2020] Nanjing University Outstanding Ph.D. Thesis Award

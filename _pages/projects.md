@@ -6,17 +6,22 @@ author_profile: true,
 ---
 
 ---
-- 软件定义的感算控一体化可编程平台架构及融合方法----**科技部重点研发计划-子课题**（主持，**在研**）
+
+- 软件定义的感算控一体化可编程平台架构及融合方法-----**科技部重点研发计划-子课题**（主持，**在研**）
   
   Theory and Method of Software-defined Integrated Perception, Computation and Control **(Principle Investigator of sub-Subject)**
   
   - National Key R&D Program of China under Grant No. 2022YFB3303900
   
--  基于多信道融合增强的RFID跨域感知研究----**国家自然科学基金-面上项目**（主持，**在研**）
+-  基于多信道融合增强的RFID跨域感知研究-----**国家自然科学基金-面上项目**（主持，**在研**）
 	
 	Cross-domain Sensing Research based on Multi-channel Fusion and Enhancement via RFID **(General Program，Principle Investigator)**
 	
 	- National Natural Science Foundation of China under Grant No. 62372224
+- 面向智能制造场景的工业操作系统感算控一体化协同机制研究-----**江苏省基础研究计划重点项目**（核心参与，**在研**）
+  
+  Research on Sensing, Computing and Control Integration Collaboration Mechanism of Industrial Operation System for Intelligent Manufacturing Scenarios 
+  - Natural Science Foundation of Jiangsu Province (Key Program) under Grant BK20243040
 	
 - 基于多标签协同的RFID跨域感知方法研究-----**国家自然科学基金-青年项目**（主持，结题）
 	
