@@ -11,14 +11,15 @@ redirect_from:
 
 ### Biography 
 
-I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) and PhD Advisor (博士生导师) in [Department of Computer Science and Technology Department](http://cs.nju.edu.cn/) at [Nanjing University](http://www.nju.edu.cn/). I  received his Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. He joined the Computer Science and Technology Department of Nanjing University in the same year. His research interests are in the areas of **wireless sensing**, including RFID, Mobile Computing, and Smart Sensing.
+I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) and PhD Advisor (博士生导师) in [Department of Computer Science and Technology Department](http://cs.nju.edu.cn/) at [Nanjing University](http://www.nju.edu.cn/). I  received his Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. I joined the Computer Science and Technology Department of Nanjing University in the same year. My research interests are in the areas of **wireless sensing**, including RFID, Mobile Computing, and Smart Sensing.
 
 <font color="red">I am recruiting motivated Ph.D. or master students who would like to work on the wireless sensing, pervasive computing and related areas. Undergraduate students who are interested in the related topics are also encouraged to contact me. </font>
 
 ### Recent News
 
+- [November 2024] Two new papers were accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2025)</font>!
 - [September 2024] One new paper was accepted by <font color="red">ACM TCH</font>!
-- [Augest 2024] One new paper was accepted by <font color="red">ACM Mobicom 2024</font>!
+- [August 2024] One new paper was accepted by <font color="red">ACM Mobicom 2024</font>!
 - [August 2024] Our research was funded by Natural Science Foundation of Jiangsu Province ---- Key Program. （<font color="red"><b>江苏省基础研究计划重点项目</b></font>）
 - [May 2024] Our team received the Top Ten Scientific and Technological Advances in the Industry Sector in Jiangsu Province (<font color="red">江苏省行业领域十大科技进展</font>)！
 - [May 2024] One new paper was accepted by <font color="red">IEEE JSAC</font>!
@@ -31,13 +32,6 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 - [November 2022] Two new papers were accepted by <font color="red">IEEE INFOCOM 2023</font>!
 - [November 2022] Two new papers were accepted by <font color="red">IEEE TMC</font>!
 - [November 2022] Our research was funded by National Key R&D Program of China ---- Industrial Software Special sub-topics. （<font color="red"><b>科技部重点研发计划-子课题</b></font>）
-<!--- [November 2021] Two new papers were accepted by <font color="red">IEEE INFOCOM 2022</font>!
-- [November 2021] Two new papers were accepted by <font color="red">ACM TOSN</font>!
-- [October 2021] Two new papers were accepted by <font color="red">ACM IMWUT</font>!
-- [July 2021] Our new paper was accepted by <font color="red">IEEE TMC</font>!
-- [May 2021] Our new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2021)</font>! -->
-<!-- - [November 2020] Our new paper was accepted by <font color="red">IEEE TMC</font>!-->
-<!-- - [April 2020] Our new paper was accepted by IEEE IWQoS 2020! -->
 
 
 
@@ -61,8 +55,3 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 * [2019] ACM China Doctorial Dissertation Award Nomination 2020
 * [2019] ACM Nanjing Chapter Doctorial Dissertation Award 2020
 * [2018] Best-in-Session Presentation Award in IEEE INFOCOM 2018
-* [2017] Program A for outstanding PhD candidate of Nanjing University
-* [2016] National Scholarship for doctoral students
-* [2015] First Prize in the Second National College Competition on Internet of Things
-* [2015] Joint-PhD Student Scholarship of China Scholarship Council
-* [2012] Excellence plan at Nanjing University
