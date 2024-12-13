@@ -7,6 +7,12 @@ author_profile: true,
 
 ---
 
+- 面向智能制造场景的工业操作系统感算控一体化协同机制研究----**江苏省基础研究计划重点项目**（核心参与，**在研**）
+  
+  Research on Sensing-Computing-Control Integrated Coordination Mechanism of Industrial Operating System for Intelligent Manufacturing Scenarios
+  
+  - Natural Science Foundation of Jiangsu Province under Grant No. BK20243040 
+  
 - 软件定义的感算控一体化可编程平台架构及融合方法-----**科技部重点研发计划-子课题**（主持，**在研**）
   
   Theory and Method of Software-defined Integrated Perception, Computation and Control **(Principle Investigator of sub-Subject)**
@@ -18,6 +24,7 @@ author_profile: true,
 	Cross-domain Sensing Research based on Multi-channel Fusion and Enhancement via RFID **(General Program，Principle Investigator)**
 	
 	- National Natural Science Foundation of China under Grant No. 62372224
+	
 - 面向智能制造场景的工业操作系统感算控一体化协同机制研究-----**江苏省基础研究计划重点项目**（核心参与，**在研**）
   
   Research on Sensing, Computing and Control Integration Collaboration Mechanism of Industrial Operation System for Intelligent Manufacturing Scenarios 
