@@ -4,17 +4,19 @@ title: "Publications"
 permalink: /publications/
 author_profile: true,
 ---
+### 2025
+---
+- [<font color="red">IEEE INFOCOM</font>] Zhongkang Qiao, **Chuyu Wang**, Lei Xie, Yuanmin Chen and Sanglu Lu. [SweaTag: Fine-grained Sweat Amount Sensing with COTS RFID Tags.](https://chuyunju.github.io/publications/) Accepted to appear In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2025.
+- [<font color="red">ACM Ubicomp</font>] Yi Li, **Chuyu Wang**, Lei Xie, Qiancheng Jin, Long Fan, Jingyi Ning, Sanglu Lu. [Facial Landmark Detection based on High Precision Spatial Sampling via Millimeter-wave Radar.](https://dl.acm.org/doi/10.1145/3699739) Accepted to appear In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT). (UbiComp 2025)
+- [<font color="red">ACM Ubicomp</font>] Yiwen Feng, Jiayang Zhao, **Chuyu Wang**, Lei Xie, Sanglu Lu. [3D Bounding Box Estimation based on COTS mmWave Radar via Moving Scanning.](https://dl.acm.org/doi/10.1145/3699758) Accepted to appear In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT). (UbiComp 2025)
 
 ### 2024
-
 ---
-
-- [<font color="red">IEEE JSAC</font>] Jingyi Ning, Lei Xie, Yi Li, Yingying Chen, Yanling Bu, **Chuyu Wang**, Sanglu Lu and Baoliu Ye. [MoiréTracker: Continuous Camera-to-Screen 6-DoF Pose Tracking based on Moiré Pattern.](https://chuyunju.github.io/publications/) Accepted by IEEE Journal on Selected Areas in Communications (JSAC), 2024. 
-- [<font color="red">ACM Ubicomp</font>] Long Fan, Lei Xie, Wenhui Zhou, **Chuyu Wang**, Yanling Bu and Sanglu Lu.. [Beamforming for Sensing: Hybrid Beamforming based on Transmitter-Receiver Collaboration for Millimeter-Wave Sensing.](https://chuyunju.github.io/publications/) Accepted to appear In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT),  (UbiComp 2024). 
-- [<font color="red">IEEE ICDCS</font>] Shiyuan Ma, Lei Xie, **Chuyu Wang**, Long Fan, Jingyi Ning, Qing Guo, Baoliu Ye and Sanglu Lu. [LED Can Backscatter: Multi-Modal based 3D Localization via LED-tag.](https://chuyunju.github.io/publications/) Accepted to appear In Proceeding of IEEE International Conference on Distributed Computing Systems, (ICDCS 2024).
-
+- [<font color="red">ACM MOBICOM</font>] Jingyi Ning, Zhihao Yan, Zhaowei Wu, Lei Xie, **Chuyu Wang**, Yingying Chen, Baoliu Ye and Sanglu Lu. [MoiréVib: Micron-level Vibration Detection based on Moiré Pattern.](https://dl.acm.org/doi/10.1145/3636534.3690700) In Preceedings of the 30th Annual International Conference on Mobile Computing and Networking. (MobiCom 2024)
+- [<font color="red">IEEE JSAC</font>] Jingyi Ning, Lei Xie, Yi Li, Yingying Chen, Yanling Bu, **Chuyu Wang**, Sanglu Lu and Baoliu Ye. [MoiréTracker: Continuous Camera-to-Screen 6-DoF Pose Tracking based on Moiré Pattern.](https://ieeexplore.ieee.org/document/10557737) In IEEE Journal on Selected Areas in Communications (JSAC), Volume: 42, Issue: 10,  2024. 
+- [<font color="red">ACM Ubicomp</font>] Long Fan, Lei Xie, Wenhui Zhou, **Chuyu Wang**, Yanling Bu and Sanglu Lu.. [Beamforming for Sensing: Hybrid Beamforming based on Transmitter-Receiver Collaboration for Millimeter-Wave Sensing.](https://dl.acm.org/doi/10.1145/3659619) In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), Article No.: 75, Pages 1 - 27, (UbiComp 2024). 
+- [<font color="red">IEEE ICDCS</font>] Shiyuan Ma, Lei Xie, **Chuyu Wang**, Long Fan, Jingyi Ning, Qing Guo, Baoliu Ye and Sanglu Lu. [LED Can Backscatter: Multi-Modal based 3D Localization via LED-tag.](https://ieeexplore.ieee.org/document/10630964/) In Proceeding of IEEE International Conference on Distributed Computing Systems, (ICDCS 2024).
 ### 2023
-
 ---
 
 - [<font color="red">IEEE INFOCOM</font>] Yiwen Feng, Kai Zhang, **Chuyu Wang\***, Lei Xie, Jingyi Ning, and Shijia Chen. [mmEavesdropper: Signal Augmentation-based Directional Eavesdropping with mmWave Radar.](https://ieeexplore.ieee.org/document/10229095/) In Proceeding of IEEE International Conference on Computer Communications (IEEE INFOCOM) 2023. 

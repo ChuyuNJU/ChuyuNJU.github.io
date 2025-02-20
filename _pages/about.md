@@ -17,6 +17,7 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 
 ### Recent News
 
+- [December 2024] One new paper was accepted by <font color="red">IEEE INFOCOM 2025</font>!
 - [November 2024] Two new papers were accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2025)</font>!
 - [September 2024] One new paper was accepted by <font color="red">ACM TCH</font>!
 - [August 2024] One new paper was accepted by <font color="red">ACM Mobicom 2024</font>!
