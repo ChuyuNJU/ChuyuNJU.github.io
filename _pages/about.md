@@ -11,20 +11,38 @@ redirect_from:
 
 ### Biography 
 
-I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) and PhD Advisor (博士生导师) in [Department of Computer Science and Technology Department](http://cs.nju.edu.cn/) at [Nanjing University](http://www.nju.edu.cn/). I  received my Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. I joined the Computer Science and Technology Department of Nanjing University in the same year. My research interests are in the areas of **wireless sensing**, including RFID, Mobile Computing, and Smart Sensing.
+I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) and PhD Advisor (博士生导师) in [School of Computer Science](http://cs.nju.edu.cn/) at [Nanjing University](http://www.nju.edu.cn/). I  received my Ph.D. degree from the [DIStributed computing LABoratory (DISLAB)](http://dislab.nju.edu.cn/), [Computer Science and Technology Department](http://cs.nju.edu.cn/) of Nanjing University, supervised by Prof. [Sanglu Lu](http://cs.nju.edu.cn/58/1e/c2639a153630/page.htm) and [Lei Xie](http://cs.nju.edu.cn/lxie) in 2018. I joined the Computer Science and Technology Department of Nanjing University in the same year. My research interests are in the areas of **wireless sensing**, including RFID, Mobile Computing, and Smart Sensing.
 
 <font color="red">I am recruiting motivated Ph.D. or master students who would like to work on the wireless sensing, pervasive computing and related areas. Undergraduate students who are interested in the related topics are also encouraged to contact me. </font>
 
 ### Recent News
 
-- [December 2024] One new paper was accepted by <font color="red">IEEE INFOCOM 2025</font>!
-- [November 2024] Two new papers were accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2025)</font>!
-- [September 2024] One new paper was accepted by <font color="red">ACM TCH</font>!
+- [August 2026] One new paper was accepted by <font color="red">IEEE TMC</font>! Congratulations to Yiwen!
+- [August 2026] Two new papers were accepted by <font color="red">ACM IMWUT (ACM UbiComp 2026)</font>! Congratulations to Shiyuan and Yu!
+- [April 2026] One new paper was accepted by <font color="red">IEEE SECON</font>! Congratulations to Zhongkang!
+- [February 2026] One new paper was accepted by <font color="red">IEEE TMC</font>! Congratulations to Long!
+- [December 2025] I received <font color="red">Tang Zhongying Young Scholars</font>!
+- [December 2025] One new paper was accepted by <font color="red">IEEE INFOCOM</font>! Congratulations to Shiyuan!
+- [August 2025] One new paper was accepted by <font color="red">ACM IMWUT (ACM UbiComp 2025)</font>! Congratulations to Long!
+- [December 2024] I received <font color="red">Jiangsu Computer Federation Excellent Young Scientist Award</font>!
+- [December 2024] One new paper was accepted by <font color="red">IEEE INFOCOM 2025</font>! Congratulations to Zhongkang!
+- [November 2024] Two new papers were accepted by <font color="red">ACM IMWUT (ACM UbiComp 2025)</font>! Congratulations to Yiwen and Yi!
 - [August 2024] One new paper was accepted by <font color="red">ACM Mobicom 2024</font>!
 - [August 2024] Our research was funded by Natural Science Foundation of Jiangsu Province ---- Key Program. （<font color="red"><b>江苏省基础研究计划重点项目</b></font>）
 - [May 2024] Our team received the Top Ten Scientific and Technological Advances in the Industry Sector in Jiangsu Province (<font color="red">江苏省行业领域十大科技进展</font>)！
-- [May 2024] One new paper was accepted by <font color="red">IEEE JSAC</font>!
-- [April 2024] One new paper was accepted by <font color="red">IEEE ICDCS</font>!
+
+
+
+<details>
+<summary>More</summary>
+
+- [April 2025] One new paper was accepted by <font color="red">IEEE ICDCS 2025</font>! Congratulations to Wenhao!
+- [March 2025] One new paper was accepted by <font color="red">IEEE IJCNN 2025</font>! Congratulations to Ning!
+- [March 2025] One new paper was accepted by <font color="red">ACM ECPDC 2025</font>! Congratulations to Shuyu!
+- [March 2025] One new survey paper was accepted by <font color="red">Journal of Software</font>! Congratulations to Yuhong!
+- [September 2024] One new paper was accepted by <font color="red">ACM TCH</font>!
+- [May 2024] One new paper was accepted by <font color="red">IEEE JSAC</font>! Congratulations to Jingyi!
+- [April 2024] One new paper was accepted by <font color="red">IEEE ICDCS</font>! Congratulations to Shiyuan!
 - [March 2024] One new paper was accepted by <font color="red">ACM IMWUT (ACM Ubicomp 2024)</font>!
 - [March 2024] I was promoted to a Tenure-track Assistant Professor (准聘助理教授 & 特聘研究员) !
 - [August 2023] Our research was funded by National Natural Science Foundation of China ---- General Program. （<font color="red"><b>国家自然科学基金-面上项目</b></font>）
@@ -34,6 +52,7 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 - [November 2022] Two new papers were accepted by <font color="red">IEEE TMC</font>!
 - [November 2022] Our research was funded by National Key R&D Program of China ---- Industrial Software Special sub-topics. （<font color="red"><b>科技部重点研发计划-子课题</b></font>）
 
+</details>
 
 
 ### Selected Publications    [(Full publications)](https://chuyunju.github.io/publications/)
@@ -48,7 +67,9 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 
 ### Selected Awards 
 
-* [2024] 江苏省行业领域十大科技进展
+* [2025] Tang Zhongying Young Scholars (仲英青年学者)
+* [2024] Jiangsu Computer Federation Excellent Young Scientist Award (江苏省计算机学会青年科技奖)
+* [2023] Ten Scientific and Technological Advances in Jiangsu Province (江苏省行业领域十大科技进展-计算机领域唯一获奖)
 * [2022] ACM Nanjing Chapter Rising Star
 * [2020] Jiangsu Outstanding Ph.D. Thesis Award
 * [2020] Nanjing University Outstanding Ph.D. Thesis Award
