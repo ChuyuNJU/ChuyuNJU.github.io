@@ -8,7 +8,7 @@ author_profile: true,
 
 ### Technical Program Committee
 ---
-- TPC of INFOCOM 2023, 2022
+- TPC of INFOCOM 2027, 2023, 2022
 - TPC of IEEE MASS 2023, 2022, 2021
 - TPC of IEEE ICPADS 2022, 2020
 - TPC of WASA 2022, 2021, 
