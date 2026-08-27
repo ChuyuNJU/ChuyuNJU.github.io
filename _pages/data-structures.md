@@ -38,7 +38,15 @@ comments: false
         </tr>
         <tr>
           <th scope="row">上课地点</th>
-          <td>逸A117</td>
+          <td>逸A-117</td>
+        </tr>
+        <tr>
+          <th scope="row">实验课时间</th>
+          <td>每周四 晚上 9-10节（18:30~20:30）</td>
+        </tr>
+        <tr>
+          <th scope="row">上课地点</th>
+          <td>基础实验楼乙125</td>
         </tr>
         <tr>
           <th scope="row">OJ 网址</th>
