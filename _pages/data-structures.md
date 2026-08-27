@@ -129,22 +129,34 @@ comments: false
   <section class="course-section" id="schedule">
     <h2>课程安排</h2>
     <div class="course-table-wrap">
-    TBA
-      <!--<table>
+      <table>
         <thead>
           <tr>
-            <th>教学阶段</th>
-            <th>主要内容</th>
-            <th>考核节点</th>
+            <th>周次</th>
+            <th>教学内容</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>第 1–4 周</td><td>基础知识与线性结构</td><td>作业 1</td></tr>
-          <tr><td>第 5–7 周</td><td>树、二叉树与堆</td><td>作业 2</td></tr>
-          <tr><td>第 8–12 周</td><td>图与查找</td><td>作业 3</td></tr>
-          <tr><td>第 13–16 周</td><td>排序、综合应用与复习</td><td>课程实验 / Project</td></tr>
+          <tr><td>第1周</td><td>前言、数据结构的基本概念、算法的基本概念、算法的性能分析</td></tr>
+          <tr><td>第2周</td><td>线性表的基本概念、顺序表、单链表、循环链表</td></tr>
+          <tr><td>第3周</td><td>双向链表、栈的表示及操作</td></tr>
+          <tr><td>第4周</td><td>栈的应用</td></tr>
+          <tr><td>第5周</td><td>队列的基本概念、递归</td></tr>
+          <tr><td>第6周</td><td>队列的应用</td></tr>
+          <tr><td>第7周</td><td>特殊矩阵、字符串操作</td></tr>
+          <tr><td>第8周</td><td>树的基本概念、二叉树</td></tr>
+          <tr><td>第9周</td><td>二叉树的遍历、树、森林的概念</td></tr>
+          <tr><td>第10周</td><td>期中考试</td></tr>
+          <tr><td>第11周</td><td>集合及其实现、并查集、散列</td></tr>
+          <tr><td>第12周</td><td>二叉搜索树、AVL树</td></tr>
+          <tr><td>第13周</td><td>图的基本概念、图的遍历</td></tr>
+          <tr><td>第14周</td><td>图的操作与应用</td></tr>
+          <tr><td>第15周</td><td>最小生成树、最短路径、拓扑序列、关键路径</td></tr>
+          <tr><td>第16周</td><td>排序、内排序算法</td></tr>
+          <tr><td>第17周</td><td>索引、B树、B+树</td></tr>
+          <tr><td>第18周</td><td>复习</td></tr>
         </tbody>
-      </table>-->
+      </table>
     </div>
     <p class="course-footnote">具体进度可能根据教学情况调整，请以课程通知为准。</p>
   </section>
