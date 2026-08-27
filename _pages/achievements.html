@@ -1,0 +1,229 @@
+---
+layout: single
+title: "Achievements"
+permalink: /achievements/
+author_profile: true
+---
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/achievements.css">
+
+<div id="achievements-app" class="achievements-app" aria-busy="true">
+  <noscript>
+    <div class="achievements-notice achievements-notice--error">此页面需要启用 JavaScript。</div>
+  </noscript>
+
+  <div id="achievements-config-notice" class="achievements-notice achievements-notice--warning" hidden>
+    成果档案尚未连接 Supabase。请先完成项目配置。
+  </div>
+
+  <section class="achievements-hero" aria-labelledby="achievements-introduction">
+    <div>
+      <h2 id="achievements-introduction">成果档案</h2>
+      <p>公开查看奖励、专利与软件著作权目录。附件和内部备注仅限管理员登录后访问。</p>
+    </div>
+    <div class="achievements-session-actions">
+      <span id="achievements-session-label" class="achievements-session-label">公开浏览</span>
+      <button id="achievements-login-button" class="achievements-button achievements-button--primary" type="button">管理员登录</button>
+      <button id="achievements-new-button" class="achievements-button achievements-button--primary" type="button" hidden>新增资料</button>
+      <button id="achievements-logout-button" class="achievements-button" type="button" hidden>退出登录</button>
+    </div>
+  </section>
+
+  <div id="achievements-message" class="achievements-notice" role="status" aria-live="polite" hidden></div>
+
+  <section class="achievements-toolbar" aria-label="成果筛选">
+    <div class="achievements-category-tabs" role="group" aria-label="资料分类">
+      <button class="achievements-category-tab is-active" type="button" data-category="all" aria-pressed="true">全部</button>
+      <button class="achievements-category-tab" type="button" data-category="award" aria-pressed="false">奖励</button>
+      <button class="achievements-category-tab" type="button" data-category="patent" aria-pressed="false">专利</button>
+      <button class="achievements-category-tab" type="button" data-category="software_copyright" aria-pressed="false">软件著作权</button>
+    </div>
+
+    <div class="achievements-filter-grid">
+      <label>
+        <span>关键词</span>
+        <input id="achievements-search" type="search" placeholder="标题、编号、人员或单位" autocomplete="off">
+      </label>
+      <label>
+        <span>年份</span>
+        <select id="achievements-year-filter">
+          <option value="">全部年份</option>
+        </select>
+      </label>
+      <label>
+        <span>状态</span>
+        <select id="achievements-status-filter">
+          <option value="">全部状态</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <div class="achievements-results-heading">
+    <strong id="achievements-result-count">正在加载…</strong>
+    <button id="achievements-clear-filters" class="achievements-link-button" type="button">清除筛选</button>
+  </div>
+
+  <div id="achievements-loading" class="achievements-loading" role="status">
+    <span class="achievements-spinner" aria-hidden="true"></span>
+    正在加载成果目录…
+  </div>
+  <div id="achievements-empty" class="achievements-empty" hidden>没有符合条件的资料。</div>
+  <div id="achievements-list" class="achievements-list" aria-live="polite"></div>
+</div>
+
+<dialog id="achievements-login-dialog" class="achievements-dialog achievements-dialog--small">
+  <form id="achievements-login-form" method="dialog">
+    <div class="achievements-dialog-header">
+      <h2>管理员登录</h2>
+      <button class="achievements-dialog-close" type="button" data-close-dialog aria-label="关闭">×</button>
+    </div>
+    <p class="achievements-dialog-description">登录后可以管理资料、查看内部备注和访问附件。</p>
+    <label>
+      <span>邮箱</span>
+      <input id="achievements-login-email" type="email" autocomplete="username" required>
+    </label>
+    <label>
+      <span>密码</span>
+      <input id="achievements-login-password" type="password" autocomplete="current-password" required>
+    </label>
+    <div id="achievements-login-error" class="achievements-form-error" role="alert" hidden></div>
+    <div class="achievements-dialog-actions achievements-dialog-actions--spread">
+      <button id="achievements-forgot-password" class="achievements-link-button" type="button">忘记密码</button>
+      <button id="achievements-login-submit" class="achievements-button achievements-button--primary" type="submit">登录</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="achievements-password-dialog" class="achievements-dialog achievements-dialog--small">
+  <form id="achievements-password-form" method="dialog">
+    <div class="achievements-dialog-header">
+      <h2>设置新密码</h2>
+      <button class="achievements-dialog-close" type="button" data-close-dialog aria-label="关闭">×</button>
+    </div>
+    <label>
+      <span>新密码</span>
+      <input id="achievements-new-password" type="password" autocomplete="new-password" minlength="8" required>
+    </label>
+    <label>
+      <span>确认新密码</span>
+      <input id="achievements-confirm-password" type="password" autocomplete="new-password" minlength="8" required>
+    </label>
+    <div id="achievements-password-error" class="achievements-form-error" role="alert" hidden></div>
+    <div class="achievements-dialog-actions">
+      <button id="achievements-password-submit" class="achievements-button achievements-button--primary" type="submit">保存新密码</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="achievements-record-dialog" class="achievements-dialog achievements-dialog--record">
+  <form id="achievements-record-form" method="dialog">
+    <div class="achievements-dialog-header">
+      <h2 id="achievements-record-dialog-title">新增资料</h2>
+      <button class="achievements-dialog-close" type="button" data-close-dialog aria-label="关闭">×</button>
+    </div>
+
+    <input id="achievement-id" type="hidden">
+    <div class="achievements-form-grid">
+      <label>
+        <span>分类 <b aria-hidden="true">*</b></span>
+        <select id="achievement-category" required>
+          <option value="award">奖励</option>
+          <option value="patent">专利</option>
+          <option value="software_copyright">软件著作权</option>
+        </select>
+      </label>
+      <label class="achievements-field--wide">
+        <span>标题 <b aria-hidden="true">*</b></span>
+        <input id="achievement-title" type="text" maxlength="500" required>
+      </label>
+      <label>
+        <span>年份 <b aria-hidden="true">*</b></span>
+        <input id="achievement-year" type="number" min="1900" max="2200" required>
+      </label>
+      <label>
+        <span>状态</span>
+        <input id="achievement-status" type="text" maxlength="100" placeholder="例如：已授权、已登记">
+      </label>
+    </div>
+
+    <fieldset class="achievements-category-fields" data-form-category="award">
+      <legend>奖励信息</legend>
+      <div class="achievements-form-grid">
+        <label><span>授奖单位</span><input id="award-awarding-body" type="text" maxlength="300"></label>
+        <label><span>奖励级别</span><input id="award-level" type="text" maxlength="100"></label>
+        <label><span>奖励等级</span><input id="award-grade" type="text" maxlength="100"></label>
+        <label><span>完成人排名</span><input id="award-rank" type="text" maxlength="100"></label>
+        <label><span>证书编号</span><input id="award-certificate-no" type="text" maxlength="200"></label>
+        <label><span>获奖日期</span><input id="award-date" type="date"></label>
+        <label class="achievements-field--wide"><span>获奖人员</span><input id="award-recipients" type="text" maxlength="1000"></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="achievements-category-fields" data-form-category="patent" hidden>
+      <legend>专利信息</legend>
+      <div class="achievements-form-grid">
+        <label><span>专利类型</span><input id="patent-type" type="text" maxlength="100" placeholder="例如：发明专利"></label>
+        <label><span>申请号</span><input id="patent-application-no" type="text" maxlength="200"></label>
+        <label><span>专利号</span><input id="patent-no" type="text" maxlength="200"></label>
+        <label><span>申请日期</span><input id="patent-application-date" type="date"></label>
+        <label><span>授权日期</span><input id="patent-grant-date" type="date"></label>
+        <label class="achievements-field--wide"><span>申请人</span><input id="patent-applicants" type="text" maxlength="1000"></label>
+        <label class="achievements-field--wide"><span>发明人</span><input id="patent-inventors" type="text" maxlength="1000"></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="achievements-category-fields" data-form-category="software_copyright" hidden>
+      <legend>软件著作权信息</legend>
+      <div class="achievements-form-grid">
+        <label><span>登记号</span><input id="software-registration-no" type="text" maxlength="200"></label>
+        <label><span>版本号</span><input id="software-version" type="text" maxlength="100"></label>
+        <label><span>开发完成日期</span><input id="software-completion-date" type="date"></label>
+        <label><span>登记日期</span><input id="software-registration-date" type="date"></label>
+        <label class="achievements-field--wide"><span>著作权人</span><input id="software-copyright-owners" type="text" maxlength="1000"></label>
+        <label class="achievements-field--wide"><span>开发人员</span><input id="software-developers" type="text" maxlength="1000"></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>私密信息</legend>
+      <label>
+        <span>内部备注</span>
+        <textarea id="achievement-internal-note" rows="4" maxlength="5000" placeholder="此内容仅管理员登录后可见"></textarea>
+      </label>
+      <label>
+        <span>附件</span>
+        <input id="achievement-file" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx">
+        <small>每条资料最多一个附件；支持 PDF、图片、Word、Excel，最大 20 MB。</small>
+      </label>
+      <div id="achievement-current-file" class="achievements-current-file" hidden></div>
+      <label id="achievement-remove-file-wrap" class="achievements-checkbox" hidden>
+        <input id="achievement-remove-file" type="checkbox">
+        <span>删除现有附件</span>
+      </label>
+      <div id="achievement-upload-progress-wrap" class="achievements-upload-progress" hidden>
+        <progress id="achievement-upload-progress" max="100" value="0"></progress>
+        <span id="achievement-upload-progress-label">准备上传…</span>
+      </div>
+    </fieldset>
+
+    <div id="achievements-record-error" class="achievements-form-error" role="alert" hidden></div>
+    <div class="achievements-dialog-actions">
+      <button class="achievements-button" type="button" data-close-dialog>取消</button>
+      <button id="achievements-record-submit" class="achievements-button achievements-button--primary" type="submit">保存</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="achievements-preview-dialog" class="achievements-dialog achievements-dialog--preview">
+  <div class="achievements-dialog-header">
+    <h2 id="achievements-preview-title">附件预览</h2>
+    <button class="achievements-dialog-close" type="button" data-close-dialog aria-label="关闭">×</button>
+  </div>
+  <div id="achievements-preview-content" class="achievements-preview-content"></div>
+</dialog>
+
+<script src="{{ site.baseurl }}/assets/js/achievements-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/tus-js-client@4.3.1/dist/tus.js" crossorigin="anonymous"></script>
+<script src="{{ site.baseurl }}/assets/js/achievements.js"></script>
