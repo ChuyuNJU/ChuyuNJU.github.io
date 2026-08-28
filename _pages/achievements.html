@@ -25,6 +25,7 @@ author_profile: true
       <span id="achievements-session-label" class="achievements-session-label">公开浏览</span>
       <button id="achievements-login-button" class="achievements-button achievements-button--primary" type="button">管理员登录</button>
       <button id="achievements-new-button" class="achievements-button achievements-button--primary" type="button" hidden>新增资料</button>
+      <button id="achievements-bulk-button" class="achievements-button" type="button" hidden>批量导入</button>
       <button id="achievements-logout-button" class="achievements-button" type="button" hidden>退出登录</button>
     </div>
   </section>
@@ -213,6 +214,88 @@ author_profile: true
       <button id="achievements-record-submit" class="achievements-button achievements-button--primary" type="submit">保存</button>
     </div>
   </form>
+</dialog>
+
+<dialog id="achievements-bulk-dialog" class="achievements-dialog achievements-dialog--bulk">
+  <div class="achievements-dialog-header">
+    <h2>批量导入资料</h2>
+    <button class="achievements-dialog-close" type="button" data-close-dialog aria-label="关闭">×</button>
+  </div>
+
+  <p class="achievements-dialog-description">
+    使用 CSV 模板一次新增多条资料。附件列可以填写 HTTPS/站内链接，也可以填写本地附件的文件名或相对路径。
+  </p>
+
+  <div class="achievements-bulk-steps">
+    <section>
+      <h3>1. 准备表格</h3>
+      <p>下载模板后用 Excel、Numbers 或文本编辑器填写；分类、标题、年份为必填项，日期使用 YYYY-MM-DD。</p>
+      <button id="achievements-bulk-template" class="achievements-button" type="button">下载 CSV 模板</button>
+    </section>
+
+    <section>
+      <h3>2. 选择表格和附件</h3>
+      <div class="achievements-form-grid">
+        <label>
+          <span>CSV 表格 <b aria-hidden="true">*</b></span>
+          <input id="achievements-bulk-csv" type="file" accept=".csv,text/csv" required>
+          <small>UTF-8 CSV，最大 2 MB。</small>
+        </label>
+        <label>
+          <span>本地附件文件夹（可选）</span>
+          <input id="achievements-bulk-files" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" multiple webkitdirectory directory>
+          <small>一次选择整个文件夹；表格中的附件路径会自动匹配。</small>
+        </label>
+      </div>
+      <div class="achievements-notice achievements-notice--warning achievements-bulk-warning">
+        站内或外部链接必须能够直接下载文件。外部网站若禁止跨站读取，请改用“本地附件文件夹”。成功导入后，附件保存在 Supabase 私有空间，源链接不会写入数据库。
+      </div>
+    </section>
+
+    <details class="achievements-bulk-columns">
+      <summary>查看模板字段说明</summary>
+      <p>
+        通用字段：分类、标题、年份、状态、内部备注、附件链接/路径、附件文件名。奖励、专利、软件著作权各自的专用字段只在对应分类中使用；其他分类字段会留空。
+      </p>
+    </details>
+  </div>
+
+  <div id="achievements-bulk-error" class="achievements-form-error" role="alert" hidden></div>
+
+  <section id="achievements-bulk-preview" class="achievements-bulk-preview" hidden aria-live="polite">
+    <div class="achievements-bulk-preview-heading">
+      <strong id="achievements-bulk-summary">尚未读取表格</strong>
+      <span id="achievements-bulk-file-summary"></span>
+    </div>
+    <div class="achievements-bulk-table-wrap">
+      <table class="achievements-bulk-table">
+        <thead>
+          <tr>
+            <th>行</th>
+            <th>分类</th>
+            <th>标题</th>
+            <th>年份</th>
+            <th>附件</th>
+            <th>结果</th>
+          </tr>
+        </thead>
+        <tbody id="achievements-bulk-preview-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div id="achievements-bulk-progress-wrap" class="achievements-upload-progress achievements-bulk-progress" hidden>
+    <progress id="achievements-bulk-progress" max="100" value="0"></progress>
+    <span id="achievements-bulk-progress-label">准备导入…</span>
+  </div>
+
+  <div class="achievements-dialog-actions achievements-dialog-actions--spread">
+    <button class="achievements-button" type="button" data-close-dialog>取消</button>
+    <div>
+      <button id="achievements-bulk-results" class="achievements-button" type="button" hidden>下载导入结果</button>
+      <button id="achievements-bulk-start" class="achievements-button achievements-button--primary" type="button" disabled>开始导入</button>
+    </div>
+  </div>
 </dialog>
 
 <dialog id="achievements-preview-dialog" class="achievements-dialog achievements-dialog--preview">
