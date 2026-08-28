@@ -48,6 +48,38 @@
     "patent_inventors", "software_registration_no", "software_version",
     "software_copyright_owners", "software_developers"
   ];
+  var BULK_MAX_CSV_SIZE = 2 * 1024 * 1024;
+  var BULK_COLUMNS = [
+    ["category", "分类"], ["title", "标题"], ["year", "年份"], ["status", "状态"],
+    ["awarding_body", "授奖单位"], ["award_level", "奖励级别"], ["award_grade", "奖励等级"],
+    ["award_rank", "完成人排名"], ["certificate_no", "证书编号"], ["award_date", "获奖日期"],
+    ["award_recipients", "获奖人员"], ["patent_type", "专利类型"],
+    ["patent_application_no", "申请号"], ["patent_no", "专利号"],
+    ["patent_application_date", "申请日期"], ["patent_grant_date", "授权日期"],
+    ["patent_applicants", "申请人"], ["patent_inventors", "发明人"],
+    ["software_registration_no", "登记号"], ["software_version", "版本号"],
+    ["software_completion_date", "开发完成日期"], ["software_registration_date", "登记日期"],
+    ["software_copyright_owners", "著作权人"], ["software_developers", "开发人员"],
+    ["internal_note", "内部备注"], ["attachment_source", "附件链接/路径"],
+    ["attachment_filename", "附件文件名"]
+  ];
+  var BULK_FIELD_LIMITS = {
+    title: 500, status: 100, awarding_body: 300, award_level: 100, award_grade: 100,
+    award_rank: 100, certificate_no: 200, award_recipients: 1000, patent_type: 100,
+    patent_application_no: 200, patent_no: 200, patent_applicants: 1000,
+    patent_inventors: 1000, software_registration_no: 200, software_version: 100,
+    software_copyright_owners: 1000, software_developers: 1000, internal_note: 5000,
+    attachment_filename: 500
+  };
+  var BULK_DATE_FIELDS = [
+    "award_date", "patent_application_date", "patent_grant_date",
+    "software_completion_date", "software_registration_date"
+  ];
+  var BULK_CATEGORY_FIELDS = {
+    award: ["awarding_body", "award_level", "award_grade", "award_rank", "certificate_no", "award_date", "award_recipients"],
+    patent: ["patent_type", "patent_application_no", "patent_no", "patent_application_date", "patent_grant_date", "patent_applicants", "patent_inventors"],
+    software_copyright: ["software_registration_no", "software_version", "software_completion_date", "software_registration_date", "software_copyright_owners", "software_developers"]
+  };
 
   var state = {
     client: null,
@@ -58,7 +90,10 @@
     isAdmin: false,
     activeCategory: "all",
     previewUrl: null,
-    authSubscription: null
+    authSubscription: null,
+    bulkRows: [],
+    bulkLocalFiles: new Map(),
+    bulkBusy: false
   };
 
   function byId(id) {
@@ -203,11 +238,13 @@
     var loginButton = byId("achievements-login-button");
     var logoutButton = byId("achievements-logout-button");
     var newButton = byId("achievements-new-button");
+    var bulkButton = byId("achievements-bulk-button");
     var label = byId("achievements-session-label");
 
     loginButton.hidden = Boolean(state.session);
     logoutButton.hidden = !state.session;
     newButton.hidden = !state.isAdmin;
+    bulkButton.hidden = !state.isAdmin;
 
     if (state.isAdmin) {
       label.textContent = "管理员：" + state.session.user.email;
@@ -480,18 +517,23 @@
     byId("achievement-upload-progress-label").textContent = label;
   }
 
-  async function standardUpload(path, file, descriptor) {
-    setUploadProgress(15, "正在上传…");
+  function reportUploadProgress(callback, percent, label) {
+    if (callback) callback(percent, label);
+    else setUploadProgress(percent, label);
+  }
+
+  async function standardUpload(path, file, descriptor, progressCallback) {
+    reportUploadProgress(progressCallback, 15, "正在上传…");
     var result = await state.client.storage.from(state.config.bucketName).upload(path, file, {
       cacheControl: "3600",
       contentType: descriptor.mime,
       upsert: false
     });
     if (result.error) throw result.error;
-    setUploadProgress(100, "上传完成");
+    reportUploadProgress(progressCallback, 100, "上传完成");
   }
 
-  async function resumableUpload(path, file, descriptor) {
+  async function resumableUpload(path, file, descriptor, progressCallback) {
     if (!window.tus || !window.tus.Upload) throw new Error("断点续传组件加载失败，请刷新页面重试。");
     var sessionResult = await state.client.auth.getSession();
     var session = sessionResult.data && sessionResult.data.session;
@@ -519,7 +561,7 @@
         onError: reject,
         onProgress: function (uploaded, total) {
           var percent = total ? Math.round((uploaded / total) * 100) : 0;
-          setUploadProgress(percent, "正在上传 " + percent + "%");
+          reportUploadProgress(progressCallback, percent, "正在上传 " + percent + "%");
         },
         onSuccess: resolve
       });
@@ -528,17 +570,17 @@
         upload.start();
       }).catch(reject);
     });
-    setUploadProgress(100, "上传完成");
+    reportUploadProgress(progressCallback, 100, "上传完成");
   }
 
-  async function uploadAttachment(recordId, file) {
+  async function uploadAttachment(recordId, file, progressCallback) {
     var descriptor = fileDescriptor(file);
     var sessionResult = await state.client.auth.getSession();
     var session = sessionResult.data && sessionResult.data.session;
     if (!session) throw new Error("登录状态已过期，请重新登录。");
     var path = session.user.id + "/" + recordId + "/" + crypto.randomUUID() + "." + descriptor.extension;
-    if (file.size > STANDARD_UPLOAD_LIMIT) await resumableUpload(path, file, descriptor);
-    else await standardUpload(path, file, descriptor);
+    if (file.size > STANDARD_UPLOAD_LIMIT) await resumableUpload(path, file, descriptor, progressCallback);
+    else await standardUpload(path, file, descriptor, progressCallback);
     return {
       file_path: path,
       original_filename: file.name,
@@ -649,6 +691,438 @@
       submit.textContent = "保存";
       byId("achievement-upload-progress-wrap").hidden = true;
     }
+  }
+
+  function csvCell(value) {
+    var text = value === undefined || value === null ? "" : String(value);
+    if (/[",\r\n]/.test(text)) return '"' + text.replace(/"/g, '""') + '"';
+    return text;
+  }
+
+  function downloadCsv(filename, rows) {
+    var text = "\ufeff" + rows.map(function (row) {
+      return row.map(csvCell).join(",");
+    }).join("\r\n") + "\r\n";
+    var url = URL.createObjectURL(new Blob([text], { type: "text/csv;charset=utf-8" }));
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  }
+
+  function downloadBulkTemplate() {
+    downloadCsv("achievements-import-template.csv", [BULK_COLUMNS.map(function (column) { return column[1]; })]);
+  }
+
+  function parseCsvTable(text) {
+    var rows = [];
+    var row = [];
+    var cell = "";
+    var quoted = false;
+    var index;
+    for (index = 0; index < text.length; index += 1) {
+      var character = text[index];
+      if (quoted) {
+        if (character === '"' && text[index + 1] === '"') {
+          cell += '"';
+          index += 1;
+        } else if (character === '"') {
+          quoted = false;
+        } else {
+          cell += character;
+        }
+      } else if (character === '"') {
+        quoted = true;
+      } else if (character === ",") {
+        row.push(cell);
+        cell = "";
+      } else if (character === "\n") {
+        row.push(cell.replace(/\r$/, ""));
+        rows.push(row);
+        row = [];
+        cell = "";
+      } else {
+        cell += character;
+      }
+    }
+    if (quoted) throw new Error("CSV 中存在未闭合的双引号。");
+    if (cell || row.length) {
+      row.push(cell.replace(/\r$/, ""));
+      rows.push(row);
+    }
+    return rows;
+  }
+
+  function bulkHeaderKey(value) {
+    var normalized = String(value || "").replace(/^\ufeff/, "").trim().toLowerCase();
+    var aliases = {
+      "类别": "category", "资料分类": "category", "附件链接": "attachment_source",
+      "附件路径": "attachment_source", "附件地址": "attachment_source", "附件": "attachment_source",
+      "文件名": "attachment_filename"
+    };
+    if (aliases[normalized]) return aliases[normalized];
+    var match = BULK_COLUMNS.find(function (column) {
+      return column[0].toLowerCase() === normalized || column[1].toLowerCase() === normalized;
+    });
+    return match ? match[0] : null;
+  }
+
+  function normalizeBulkCategory(value) {
+    var normalized = String(value || "").trim().toLowerCase().replace(/[\s-]+/g, "_");
+    if (normalized === "award" || normalized === "奖励") return "award";
+    if (normalized === "patent" || normalized === "专利") return "patent";
+    if (["software_copyright", "softwarecopyright", "软件著作权", "软著"].indexOf(normalized) !== -1) {
+      return "software_copyright";
+    }
+    return null;
+  }
+
+  function validIsoDate(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    var parts = value.split("-").map(Number);
+    var date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+    return date.getUTCFullYear() === parts[0] && date.getUTCMonth() === parts[1] - 1 && date.getUTCDate() === parts[2];
+  }
+
+  function parseBulkCsv(text) {
+    var table = parseCsvTable(text);
+    while (table.length && table[table.length - 1].every(function (value) { return !String(value).trim(); })) table.pop();
+    if (!table.length) throw new Error("CSV 文件为空。");
+
+    var headers = table[0].map(bulkHeaderKey);
+    var knownHeaders = headers.filter(Boolean);
+    ["category", "title", "year"].forEach(function (required) {
+      if (knownHeaders.indexOf(required) === -1) throw new Error("CSV 缺少必填列：“" + BULK_COLUMNS.find(function (column) { return column[0] === required; })[1] + "”。");
+    });
+    var duplicates = knownHeaders.filter(function (header, position) { return knownHeaders.indexOf(header) !== position; });
+    if (duplicates.length) throw new Error("CSV 存在重复字段列，请保留每个字段的一列。");
+
+    var seen = new Set();
+    return table.slice(1).filter(function (cells) {
+      return cells.some(function (value) { return Boolean(String(value).trim()); });
+    }).map(function (cells, position) {
+      var values = {};
+      headers.forEach(function (header, columnIndex) {
+        if (header) values[header] = String(cells[columnIndex] || "").trim();
+      });
+      var errors = [];
+      var category = normalizeBulkCategory(values.category);
+      var year = Number(values.year);
+      var title = clean(values.title);
+      if (!category) errors.push("分类必须是奖励、专利或软件著作权");
+      if (!title) errors.push("标题不能为空");
+      if (!Number.isInteger(year) || year < 1900 || year > 2200) errors.push("年份必须是 1900–2200 的整数");
+      Object.keys(BULK_FIELD_LIMITS).forEach(function (field) {
+        if (values[field] && values[field].length > BULK_FIELD_LIMITS[field]) {
+          errors.push((BULK_COLUMNS.find(function (column) { return column[0] === field; }) || [field, field])[1] + "超过长度限制");
+        }
+      });
+      BULK_DATE_FIELDS.forEach(function (field) {
+        if (values[field] && !validIsoDate(values[field])) {
+          errors.push((BULK_COLUMNS.find(function (column) { return column[0] === field; }) || [field, field])[1] + "应为 YYYY-MM-DD");
+        }
+      });
+      if (values.attachment_filename) {
+        try {
+          fileDescriptor({ name: values.attachment_filename, size: 1 });
+        } catch (error) {
+          errors.push("附件文件名的扩展名不受支持");
+        }
+      }
+      var fingerprint = category && title && Number.isInteger(year) ? category + "\n" + title + "\n" + year : null;
+      if (fingerprint && seen.has(fingerprint)) errors.push("表格内存在相同分类、标题和年份的重复行");
+      if (fingerprint) seen.add(fingerprint);
+      return {
+        rowNumber: position + 2,
+        values: values,
+        category: category,
+        title: title,
+        year: year,
+        errors: errors,
+        result: "",
+        resultType: "",
+        fingerprint: fingerprint
+      };
+    });
+  }
+
+  function normalizeAttachmentKey(value) {
+    var normalized = String(value || "").trim().replace(/\\/g, "/").replace(/^\.\//, "").replace(/^\//, "");
+    try { normalized = decodeURIComponent(normalized); } catch (error) { /* Keep the original text. */ }
+    return normalized;
+  }
+
+  function addBulkLocalFileKey(key, file) {
+    var normalized = normalizeAttachmentKey(key);
+    if (!normalized) return;
+    var existing = state.bulkLocalFiles.get(normalized);
+    if (!existing) state.bulkLocalFiles.set(normalized, file);
+    else if (existing !== file) state.bulkLocalFiles.set(normalized, null);
+  }
+
+  function rebuildBulkLocalFiles() {
+    state.bulkLocalFiles = new Map();
+    Array.from(byId("achievements-bulk-files").files || []).forEach(function (file) {
+      addBulkLocalFileKey(file.name, file);
+      if (file.webkitRelativePath) {
+        addBulkLocalFileKey(file.webkitRelativePath, file);
+        var parts = file.webkitRelativePath.split("/");
+        if (parts.length > 1) addBulkLocalFileKey(parts.slice(1).join("/"), file);
+      }
+    });
+  }
+
+  function bulkPublicPayload(row) {
+    var payload = { category: row.category, title: row.title, year: row.year, status: clean(row.values.status) };
+    Object.keys(PUBLIC_FIELD_IDS).forEach(function (field) { payload[field] = null; });
+    (BULK_CATEGORY_FIELDS[row.category] || []).forEach(function (field) { payload[field] = clean(row.values[field]); });
+    return payload;
+  }
+
+  function setBulkRowResult(row, message, type) {
+    row.result = message;
+    row.resultType = type || "";
+  }
+
+  function renderBulkPreview() {
+    var preview = byId("achievements-bulk-preview");
+    var body = byId("achievements-bulk-preview-body");
+    body.replaceChildren();
+    if (!state.bulkRows.length) {
+      preview.hidden = true;
+      byId("achievements-bulk-start").disabled = true;
+      return;
+    }
+    var valid = state.bulkRows.filter(function (row) { return !row.errors.length; }).length;
+    var invalid = state.bulkRows.length - valid;
+    byId("achievements-bulk-summary").textContent = "共 " + state.bulkRows.length + " 行；可导入 " + valid + " 行" + (invalid ? "；需修正 " + invalid + " 行" : "");
+    byId("achievements-bulk-file-summary").textContent = "已选择 " + byId("achievements-bulk-files").files.length + " 个本地附件";
+
+    state.bulkRows.forEach(function (row) {
+      var tableRow = document.createElement("tr");
+      var attachment = clean(row.values.attachment_source) || "无";
+      var result = row.errors.length ? row.errors.join("；") : (row.result || "待导入");
+      [row.rowNumber, CATEGORY_LABELS[row.category] || row.values.category || "—", row.title || "—", Number.isInteger(row.year) ? row.year : (row.values.year || "—"), attachment, result].forEach(function (value, index) {
+        var cell = document.createElement("td");
+        cell.textContent = String(value);
+        if (index === 5) {
+          var type = row.errors.length ? "error" : row.resultType;
+          if (type) cell.classList.add("achievements-bulk-status--" + type);
+        }
+        tableRow.appendChild(cell);
+      });
+      body.appendChild(tableRow);
+    });
+    preview.hidden = false;
+    var pending = state.bulkRows.some(function (row) { return !row.errors.length && row.resultType !== "success" && row.resultType !== "skipped"; });
+    byId("achievements-bulk-start").disabled = state.bulkBusy || !pending;
+  }
+
+  function resetBulkDialog() {
+    state.bulkRows = [];
+    state.bulkLocalFiles = new Map();
+    state.bulkBusy = false;
+    byId("achievements-bulk-csv").value = "";
+    byId("achievements-bulk-files").value = "";
+    byId("achievements-bulk-preview-body").replaceChildren();
+    byId("achievements-bulk-preview").hidden = true;
+    byId("achievements-bulk-progress-wrap").hidden = true;
+    byId("achievements-bulk-results").hidden = true;
+    byId("achievements-bulk-start").disabled = true;
+    clearFormError("achievements-bulk-error");
+  }
+
+  function openBulkDialog() {
+    if (!state.isAdmin) return;
+    resetBulkDialog();
+    showDialog(byId("achievements-bulk-dialog"));
+  }
+
+  async function readBulkCsv() {
+    clearFormError("achievements-bulk-error");
+    var file = byId("achievements-bulk-csv").files[0];
+    if (!file) {
+      state.bulkRows = [];
+      renderBulkPreview();
+      return;
+    }
+    if (file.size > BULK_MAX_CSV_SIZE) {
+      showFormError("achievements-bulk-error", "CSV 文件不能超过 2 MB。");
+      return;
+    }
+    try {
+      state.bulkRows = parseBulkCsv(await file.text());
+      if (!state.bulkRows.length) throw new Error("CSV 中没有资料行。");
+      renderBulkPreview();
+    } catch (error) {
+      state.bulkRows = [];
+      renderBulkPreview();
+      showFormError("achievements-bulk-error", humanError(error));
+    }
+  }
+
+  function filenameFromUrl(url) {
+    var pathname = url.pathname.split("/").pop() || "";
+    try { pathname = decodeURIComponent(pathname); } catch (error) { /* Use the encoded name. */ }
+    return pathname;
+  }
+
+  async function remoteAttachmentFile(source, preferredName) {
+    var url;
+    try { url = new URL(source, window.location.href); } catch (error) { throw new Error("附件链接格式不正确。"); }
+    if (url.protocol !== "https:" && url.origin !== window.location.origin) throw new Error("附件链接必须使用 HTTPS。");
+    var response;
+    try {
+      response = await fetch(url.href, { credentials: "omit", mode: "cors", cache: "no-store", referrerPolicy: "no-referrer" });
+    } catch (error) {
+      throw new Error("无法读取附件链接。外部网站可能禁止跨站下载，请改用本地附件文件夹。");
+    }
+    if (!response.ok) throw new Error("附件链接返回 HTTP " + response.status + "。");
+    var contentLength = Number(response.headers.get("content-length") || 0);
+    if (contentLength > MAX_FILE_SIZE) throw new Error("附件超过 20 MB。");
+    var blob = await response.blob();
+    if (blob.type && /^text\/html/i.test(blob.type)) throw new Error("附件链接返回的是网页，不是可下载文件。");
+    var filename = clean(preferredName) || filenameFromUrl(url);
+    if (!filename) throw new Error("无法从链接判断文件名，请填写“附件文件名”。");
+    var file = new File([blob], filename, { type: blob.type || "application/octet-stream" });
+    fileDescriptor(file);
+    return file;
+  }
+
+  async function resolveBulkAttachment(row) {
+    var source = clean(row.values.attachment_source);
+    if (!source) return null;
+    var normalized = normalizeAttachmentKey(source);
+    if (state.bulkLocalFiles.has(normalized)) {
+      var direct = state.bulkLocalFiles.get(normalized);
+      if (!direct) throw new Error("本地附件路径不唯一，请在表格中填写更完整的相对路径。");
+      fileDescriptor(direct);
+      return direct;
+    }
+    var basename = normalized.split("/").pop();
+    if (basename && state.bulkLocalFiles.has(basename)) {
+      var byName = state.bulkLocalFiles.get(basename);
+      if (!byName) throw new Error("本地附件文件名不唯一，请填写包含文件夹的相对路径。");
+      fileDescriptor(byName);
+      return byName;
+    }
+    if (!/^(https:\/\/|\/|\.\/)/i.test(source)) {
+      throw new Error("未在所选文件夹中找到附件：“" + source + "”。");
+    }
+    return remoteAttachmentFile(source, row.values.attachment_filename);
+  }
+
+  function hasExistingBulkRecord(row) {
+    return state.records.some(function (record) {
+      return record.category === row.category && Number(record.year) === row.year && String(record.title).trim() === row.title;
+    });
+  }
+
+  function setBulkProgress(completed, total, rowPercent, label) {
+    var fraction = total ? (completed + Math.max(0, Math.min(100, rowPercent || 0)) / 100) / total : 0;
+    byId("achievements-bulk-progress-wrap").hidden = false;
+    byId("achievements-bulk-progress").value = Math.round(fraction * 100);
+    byId("achievements-bulk-progress-label").textContent = label;
+  }
+
+  async function importBulkRow(row, completed, total) {
+    var recordId = crypto.randomUUID();
+    var uploaded = null;
+    var publicInserted = false;
+    try {
+      var file = await resolveBulkAttachment(row);
+      if (file) {
+        setBulkRowResult(row, "正在上传附件…", "working");
+        renderBulkPreview();
+        uploaded = await uploadAttachment(recordId, file, function (percent) {
+          setBulkProgress(completed, total, percent, "第 " + (completed + 1) + "/" + total + " 条：正在上传附件 " + percent + "%");
+        });
+      }
+
+      var payload = bulkPublicPayload(row);
+      payload.id = recordId;
+      var publicResult = await state.client.from("achievement_records").insert(payload);
+      if (publicResult.error) throw publicResult.error;
+      publicInserted = true;
+
+      var privatePayload = { record_id: recordId, internal_note: clean(row.values.internal_note) };
+      if (uploaded) Object.assign(privatePayload, uploaded);
+      var privateResult = await state.client.from("achievement_private").insert(privatePayload);
+      if (privateResult.error) throw privateResult.error;
+    } catch (error) {
+      if (publicInserted) await state.client.from("achievement_records").delete().eq("id", recordId);
+      if (uploaded && uploaded.file_path) {
+        try { await removeStorageFile(uploaded.file_path); } catch (cleanupError) { /* Report the original row error. */ }
+      }
+      throw error;
+    }
+  }
+
+  async function startBulkImport() {
+    if (!state.isAdmin || state.bulkBusy) return;
+    clearFormError("achievements-bulk-error");
+    var candidates = state.bulkRows.filter(function (row) {
+      return !row.errors.length && row.resultType !== "success" && row.resultType !== "skipped";
+    });
+    if (!candidates.length) return;
+    if (!window.confirm("即将批量导入 " + candidates.length + " 条资料。确认开始吗？")) return;
+
+    state.bulkBusy = true;
+    byId("achievements-bulk-start").disabled = true;
+    byId("achievements-bulk-results").hidden = true;
+    var completed = 0;
+    var succeeded = 0;
+    var failed = 0;
+    var skipped = 0;
+    clearMessage();
+
+    for (var index = 0; index < candidates.length; index += 1) {
+      var row = candidates[index];
+      setBulkProgress(completed, candidates.length, 0, "第 " + (index + 1) + "/" + candidates.length + " 条：" + row.title);
+      if (hasExistingBulkRecord(row)) {
+        setBulkRowResult(row, "已跳过：现有目录已有相同分类、标题和年份", "skipped");
+        skipped += 1;
+      } else {
+        try {
+          setBulkRowResult(row, "正在导入…", "working");
+          renderBulkPreview();
+          await importBulkRow(row, completed, candidates.length);
+          setBulkRowResult(row, "导入成功", "success");
+          succeeded += 1;
+        } catch (error) {
+          setBulkRowResult(row, "导入失败：" + humanError(error), "error");
+          failed += 1;
+        }
+      }
+      completed += 1;
+      setBulkProgress(completed, candidates.length, 0, "已处理 " + completed + "/" + candidates.length + " 条");
+      renderBulkPreview();
+    }
+
+    try {
+      await loadRecords();
+      await loadPrivateRecords();
+      renderRecords();
+    } catch (error) {
+      showFormError("achievements-bulk-error", "资料已经处理，但目录刷新失败：" + humanError(error) + " 请刷新页面核对结果。");
+    } finally {
+      state.bulkBusy = false;
+      renderBulkPreview();
+      byId("achievements-bulk-results").hidden = false;
+      byId("achievements-bulk-progress-label").textContent = "处理完成：成功 " + succeeded + "，失败 " + failed + "，跳过 " + skipped;
+      showMessage("批量导入完成：成功 " + succeeded + " 条，失败 " + failed + " 条，跳过 " + skipped + " 条。", failed ? "warning" : "success");
+    }
+  }
+
+  function downloadBulkResults() {
+    var headers = BULK_COLUMNS.map(function (column) { return column[1]; }).concat(["导入结果"]);
+    var rows = state.bulkRows.map(function (row) {
+      return BULK_COLUMNS.map(function (column) { return row.values[column[0]] || ""; }).concat([row.errors.length ? row.errors.join("；") : (row.result || "未处理")]);
+    });
+    downloadCsv("achievements-import-results.csv", [headers].concat(rows));
   }
 
   async function deleteRecord(record) {
@@ -831,12 +1305,27 @@
       showDialog(byId("achievements-login-dialog"));
     });
     byId("achievements-new-button").addEventListener("click", function () { openRecordDialog(null); });
+    byId("achievements-bulk-button").addEventListener("click", openBulkDialog);
     byId("achievements-logout-button").addEventListener("click", logout);
     byId("achievements-login-form").addEventListener("submit", login);
     byId("achievements-forgot-password").addEventListener("click", forgotPassword);
     byId("achievements-password-form").addEventListener("submit", updatePassword);
     byId("achievements-record-form").addEventListener("submit", saveRecord);
     byId("achievement-category").addEventListener("change", updateCategoryForm);
+    byId("achievements-bulk-template").addEventListener("click", downloadBulkTemplate);
+    byId("achievements-bulk-csv").addEventListener("change", readBulkCsv);
+    byId("achievements-bulk-files").addEventListener("change", function () {
+      rebuildBulkLocalFiles();
+      renderBulkPreview();
+    });
+    byId("achievements-bulk-start").addEventListener("click", startBulkImport);
+    byId("achievements-bulk-results").addEventListener("click", downloadBulkResults);
+    byId("achievements-bulk-dialog").addEventListener("cancel", function (event) {
+      if (state.bulkBusy) {
+        event.preventDefault();
+        showFormError("achievements-bulk-error", "批量导入正在进行，请等待当前任务完成。");
+      }
+    });
     byId("achievements-search").addEventListener("input", renderRecords);
     byId("achievements-year-filter").addEventListener("change", renderRecords);
     byId("achievements-status-filter").addEventListener("change", renderRecords);
@@ -858,6 +1347,10 @@
     document.querySelectorAll("[data-close-dialog]").forEach(function (closeButton) {
       closeButton.addEventListener("click", function () {
         var dialog = closeButton.closest("dialog");
+        if (dialog && dialog.id === "achievements-bulk-dialog" && state.bulkBusy) {
+          showFormError("achievements-bulk-error", "批量导入正在进行，请等待当前任务完成。");
+          return;
+        }
         if (dialog) closeDialog(dialog);
       });
     });
