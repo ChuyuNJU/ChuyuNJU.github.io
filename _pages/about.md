@@ -15,6 +15,8 @@ I am currently a Tenure-track Assistant Professor (准聘助理教授 & 特聘�
 
 <font color="red">I am recruiting motivated Ph.D. or master students who would like to work on the wireless sensing, pervasive computing and related areas. Undergraduate students who are interested in the related topics are also encouraged to contact me. </font>
 
+<p lang="zh-CN">课题组长期招收对无线感知、RFID、毫米波雷达、移动计算和普适计算感兴趣的博士生、硕士生及本科生。联系时请将个人简历、成绩单、研究兴趣和代表性项目发送至 <a href="mailto:chuyu@nju.edu.cn">chuyu@nju.edu.cn</a>，邮件标题建议使用“申请学生 – [申请层次] – [姓名]”。</p>
+
 ### Recent News
 
 - [August 2026] One new paper was accepted by <font color="red">IEEE TMC</font>! Congratulations to Yiwen!

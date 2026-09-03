@@ -8,7 +8,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Chuyu Wang"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Chuyu Wang"
 description              : &description "Short Bio"
