@@ -86,7 +86,10 @@ comments: false
           <!--待发布-->
           <a href="/files/data-structures/ch1.pdf">ch1</a>
           </span></td><td>—</td></tr>
-          <tr><td>第 2 章</td><td>线性表</td><td><span class="course-status">待发布</span></td><td>—</td></tr>
+          <tr><td>第 2 章</td><td>线性表</td><td><span class="course-status">
+          <!--待发布-->
+          <a href="/files/data-structures/ch2.pdf">ch2</a>
+          </span></td><td>—</td></tr>
           <tr><td>第 3 章</td><td>栈和队列</td><td><span class="course-status">待发布</span></td><td>—</td></tr>
           <tr><td>第 4 章</td><td>字符串</td><td><span class="course-status">待发布</span></td><td>—</td></tr>
           <tr><td>第 5 章</td><td>多维数组和广义表</td><td><span class="course-status">待发布</span></td><td>—</td></tr>
@@ -108,13 +111,12 @@ comments: false
         <p><a href="/files/data-structures/HM1.pdf">HM1</a></p>
         <p>截止时间：9月10日</p>
       </article>
-      <!--<article class="course-assignment">
-        <h3>作业 2</h3>
-        <p>内容：待发布</p>
-        <p>截止时间：待公布</p>
-        <span class="course-status">尚未开放</span>
-      </article>
       <article class="course-assignment">
+        <h3>作业 2</h3>
+        <p><a href="/files/data-structures/HM2.pdf">HM2</a></p>
+        <p>截止时间：9月24日</p>
+      </article>
+      <!--<article class="course-assignment">
         <h3>作业 3</h3>
         <p>内容：待发布</p>
         <p>截止时间：待公布</p>
