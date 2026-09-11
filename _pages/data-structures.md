@@ -108,12 +108,12 @@ comments: false
     <div class="course-assignment-grid">
       <article class="course-assignment">
         <h3>作业 1</h3>
-        <p><a href="/files/data-structures/HM1.pdf">HM1</a></p>
+        <p><a href="/files/data-structures/HW1.pdf">HW1</a></p>
         <p>截止时间：9月10日</p>
       </article>
       <article class="course-assignment">
         <h3>作业 2</h3>
-        <p><a href="/files/data-structures/HM2.pdf">HM2</a></p>
+        <p><a href="/files/data-structures/HW2.pdf">HW2</a></p>
         <p>截止时间：9月24日</p>
       </article>
       <!--<article class="course-assignment">
